@@ -1,0 +1,41 @@
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
+
+.container-fluid {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, #ffffff 83.85%), url(/assets/background.jpg);
+  mix-blend-mode: normal;
+  background-position: center;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.title {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 3px theme-color("secondary");
+}
+
+.lineSeparator {
+  height: 3px;
+  border: none;
+  background: theme-color("dark");
+}
+
+.linkBlog {
+  letter-spacing: 2px;
+}
+
+.linkBlog span:hover {
+  color: theme-color("secondary");
+  cursor: pointer;
+}
+
+.socialIcon a {
+  color: theme-color("dark");
+}
+
+.socialIcon a:hover {
+  color: theme-color("secondary");
+  cursor: pointer;
+}
