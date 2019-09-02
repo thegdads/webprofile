@@ -22,13 +22,24 @@
   background: theme-color("dark");
 }
 
-.linkBlog {
+.linkBlog div:hover {
+  color: theme-color("secondary");
+  cursor: pointer;
+}
+
+.linkBlog div:nth-child(3) {
+  border: none;
+}
+
+.linkBlog div {
+  display: inline-flex;
+  padding: 0px 10px;
+  border-right: solid;
   letter-spacing: 2px;
 }
 
-.linkBlog span:hover {
-  color: theme-color("secondary");
-  cursor: pointer;
+.socialIcon {
+  padding-top: 1em;
 }
 
 .socialIcon a {
