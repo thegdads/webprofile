@@ -1,0 +1,12 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+$BlogGreen:    #026E00 !default;
+$BlogDark:    #333333 !default;
+$theme-colors: map-merge(
+  (
+    "main": $BlogGreen,
+    "background": $BlogDark
+  ),
+  $theme-colors
+);
+
