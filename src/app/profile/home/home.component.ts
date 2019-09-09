@@ -14,7 +14,11 @@ export class HomeComponent implements OnInit {
     this.titleService.setTitle('Yuda Ferry Mahendra | bealkha.com');
     this.metaService.addTags([
       { name: 'title', content: 'Yuda Ferry Mahendra | bealkha.com' },
-      { name: 'description', content: 'Yuda Ferry Mahendra, seorang web programmer sejak 2010. Saat ini mendalami nodejs, angular, ionic, dan mongodb.' },
+      {
+        name: 'description',
+        content:  'Yuda Ferry Mahendra, seorang web programmer sejak '+
+                  '2010. Saat ini mendalami nodejs, angular, ionic, dan mongodb.'
+      },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Yuda Ferry Mahendra' },
