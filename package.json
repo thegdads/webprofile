@@ -1,6 +1,6 @@
 {
-  "name": "the-gdads",
-  "version": "0.1.0",
+  "name": "thegdads",
+  "version": "0.6.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --disable-host-check --host 0.0.0.0",

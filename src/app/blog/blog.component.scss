@@ -10,3 +10,11 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
+.bg-main {
+  background-color: theme-color("main");
+  color: theme-color('light');
+}
+
+.card {
+  box-shadow: theme-color("background") 3px 3px 25px;
+}

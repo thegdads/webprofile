@@ -4,7 +4,16 @@ import { BlogComponent } from './blog.component';
 
 
 const routes: Routes = [
-  {path: '', component: BlogComponent}
+  {
+    path: '',
+    component: BlogComponent,
+    children: [
+      { 
+        path: '',
+        loadChildren: () => import('./posts/posts.module').then(mod => mod.PostsModule)
+      }
+    ]
+  }
 ];
 
 @NgModule({

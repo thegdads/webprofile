@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
         content:  'Yuda Ferry Mahendra, seorang web programmer sejak '+
                   '2010. Saat ini mendalami nodejs, angular, ionic, dan mongodb.'
       },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Yuda Ferry Mahendra' },
       { name: 'keywords', content: 'Yuda Ferry Mahendra, Full stack programmer, Nodejs' },
