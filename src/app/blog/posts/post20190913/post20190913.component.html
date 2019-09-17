@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-  <div class="col-6">
+  <div class="col-12 col-md-9 col-lg-6">
     <div class="row">
       <div class="col">
         <h3>Menambahkan dinamik title dan meta tag di angular</h3>
@@ -8,33 +8,55 @@
     </div>
     <div class="row my-3">
       <div class="col">
-        <img src="https://ik.imagekit.io/juncyboy/tr:ar-7-2,h-200,q-5/bealkha.com/meta_tags_I7AknlwPBz.jpg" alt="image cantik">
+        <img src="https://ik.imagekit.io/juncyboy/tr:ar-7-2,q-5/bealkha.com/meta_tags_I7AknlwPBz.jpg" alt="image cantik"
+          class="w-100">
       </div>
     </div>
     <p>
-      Title atau judul dalam bagian <i>header</i> website berguna untuk memberi informasi ke pembaca 
-      tentang isi materi yang akan user baca atau akses. Sedangkan metadata berguna untuk memberi 
+      Title atau judul dalam bagian <i>header</i> website berguna untuk memberi informasi ke pembaca
+      tentang isi materi yang akan user baca atau akses. Sedangkan metadata berguna untuk memberi
       informasi ke robot pencari (search engine) agar website yang kita buat bisa index dan dimasukkan
-      ke database <i>search engine</i> seperti google, bing, duckduckgo dan lain-lain. 
-      Angular adalah javascript framework yang dapat digunakan untuk membuat static ataupun dinamis website. 
+      ke database <i>search engine</i> seperti google, bing, duckduckgo dan lain-lain.
+      Angular adalah javascript framework yang dapat digunakan untuk membuat static ataupun dinamis website.
     </p>
-    <h5>Apakah perlu? dan mengapa harus dinamis?</h5>
+    <h5 class="bg-dark p-2 text-light">Apakah perlu? dan mengapa harus dinamis?</h5>
     <p>
-      Static website yang digunakan untuk web profil atau blog sangat membutuhkan title dan metadata. 
-      Tujuan dari title dan metadata ini agar <i>search engine</i> dengan mudah melakukan indexing sehingga website 
+      Static website yang digunakan untuk web profil atau blog sangat membutuhkan title dan metadata.
+      Tujuan dari title dan metadata ini agar <i>search engine</i> dengan mudah melakukan indexing sehingga website
       bisa masuk dalam daftar pencarian user. Meskipun secara teknis implementasi-nya title dan metadata ini
-      tidak bisa secara cepat membuat website langsung diindex dan dibaca oleh <i>search engine</i>, tetapi
-      saat <i>search engine</i> bisa mendeteksi website yang kita buat, <i>search engine</i> bisa dengan cepat,
+      tidak bisa secara cepat membuat website langsung di index dan dibaca oleh <i>search engine</i> serta
+      metadata sudah tidak digunakan lagi oleh google untuk web ranking
+      (<a href="https://webmasters.googleblog.com/2009/09/google-does-not-use-keywords-meta-tag.html"
+        rel="nofollow">source</a>)
+      , tetapi saat <i>search engine</i> mendeteksi website yang kita buat, <i>search engine</i> bisa dengan cepat,
       mudah dan tanpa kendala memasukkan website ke database mereka.
     </p>
     <p>
-      Alasan utama dinamik title dan metadata untuk sebuah website adalah konten yang akan di sediakan sebuah website tersebut
-      bukan konten statis, seperti blog atau web profil yang tiap beberapa periode sekali terjadi perubahan konten.
-      Dinamik title dan metadata 
+      Mengapa harus dinamis...? Alasan utamanya adalah KONTEN, ya konten yang akan di sediakan sebuah website tersebut
+      <b>BUKAN KONTENT STATIS (artinya konten itu dinamis)</b>, seperti blog atau web profil yang tiap beberapa periode
+      sekali terjadi perubahan konten. Dinamik title dan metadata harus berganti seiring update page atau update
+      informasi.
+      Konten yang dinamis jika dipasang title dan metadata statis atau sama saja tiap page akan membingungkan user yang
+      ingin mencari informasi.
     </p>
-    <h5>Where</h5>
-    <h5>When</h5>
-    <h5>Who</h5>
-    <h5>How</h5>
+    <p class="text-center example">
+      <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2018/04/sejtemplate.png"
+        class="w-75 border border-danger">
+      <br /><a href="https://www.searchenginejournal.com/meta-description-mistakes/250897/"><small>image source
+          credit</small></a>
+    </p>
+    <h5 class="bg-dark p-2 text-light">Bagaimana cara menerapkannya di angular?</h5>
+    <p>
+      Menurut dokumentasi API angular (<a href="https://angular.io/api/platform-browser/Title">title</a> dan
+      <a href="https://angular.io/api/platform-browser/Meta">meta</a>), memasukkan title dan metadata
+      cukup dengan import library yang sudah dimiliki angular ke file <samp class="text-secondary">component.ts</samp>.
+      Nama library-nya <samp class="text-secondary">@angular/platform-browser</samp>, sebenarnya function dari library ini
+      cukup banyak, tapi tidak akan dibahas detil disini, fokus ke <code>Title</code> function dan <code>Meta</code> function saja.
+    </p>
+    <div class="row justify-content-center codeExample">
+      <div class="col-auto">
+        <code>import &#123; Title, Meta &#125; from &apos;@angular/platform-browser&apos;;</code>
+      </div>
+    </div>
   </div>
 </div>
