@@ -1,0 +1,93 @@
+<div class="row justify-content-center">
+  <div class="col-12 col-md-9 col-lg-6">
+    <div class="row">
+      <div class="col">
+        <h3>Menambahkan dinamik title dan meta tag di angular</h3>
+        <small>{{articleDate | date:'medium'}}</small>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col">
+        <img src="https://ik.imagekit.io/juncyboy/tr:ar-7-2,q-5/bealkha.com/meta_tags_I7AknlwPBz.jpg" alt="image cantik"
+          class="w-100">
+      </div>
+    </div>
+    <p>
+      Title atau judul dalam bagian <i>header</i> website berguna untuk memberi informasi ke pembaca
+      tentang isi materi yang akan user baca atau akses. Sedangkan metadata berguna untuk memberi
+      informasi ke robot pencari (search engine) agar website yang kita buat bisa index dan dimasukkan
+      ke database <i>search engine</i> seperti google, bing, duckduckgo dan lain-lain.
+      Angular adalah javascript framework yang dapat digunakan untuk membuat static ataupun dinamis website.
+    </p>
+    <h5 class="bg-dark p-2 text-light">Apakah perlu? dan mengapa harus dinamis?</h5>
+    <p>
+      Static website yang digunakan untuk web profil atau blog sangat membutuhkan title dan metadata.
+      Tujuan dari title dan metadata ini agar <i>search engine</i> dengan mudah melakukan indexing sehingga website
+      bisa masuk dalam daftar pencarian user. Meskipun secara teknis implementasi-nya title dan metadata ini
+      tidak bisa secara cepat membuat website langsung di index dan dibaca oleh <i>search engine</i> serta
+      metadata sudah tidak digunakan lagi oleh google untuk web ranking
+      (<a href="https://webmasters.googleblog.com/2009/09/google-does-not-use-keywords-meta-tag.html"
+        rel="nofollow">source</a>)
+      , tetapi saat <i>search engine</i> mendeteksi website yang kita buat, <i>search engine</i> bisa dengan cepat,
+      mudah dan tanpa kendala memasukkan website ke database mereka.
+    </p>
+    <p>
+      Mengapa harus dinamis...? Alasan utamanya adalah KONTEN, ya konten yang akan di sediakan sebuah website tersebut
+      <b>BUKAN KONTENT STATIS (artinya konten itu dinamis)</b>, seperti blog atau web profil yang tiap beberapa periode
+      sekali terjadi perubahan konten. Dinamik title dan metadata harus berganti seiring update page atau update
+      informasi.
+      Konten yang dinamis jika dipasang title dan metadata statis atau sama saja tiap page akan membingungkan user yang
+      ingin mencari informasi.
+    </p>
+    <p class="text-center example">
+      <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2018/04/sejtemplate.png"
+        class="w-75 border border-danger">
+      <br /><a href="https://www.searchenginejournal.com/meta-description-mistakes/250897/"><small>image source
+          credit</small></a>
+    </p>
+    <h5 class="bg-dark p-2 text-light">Bagaimana cara menerapkannya di angular?</h5>
+    <p>
+      Menurut dokumentasi API angular (<a href="https://angular.io/api/platform-browser/Title">title</a> dan
+      <a href="https://angular.io/api/platform-browser/Meta">meta</a>), memasukkan title dan metadata
+      cukup dengan import library yang sudah dimiliki angular ke file <samp class="text-secondary">component.ts</samp>.
+      Nama library-nya <samp class="text-secondary">@angular/platform-browser</samp>, sebenarnya function dari library
+      ini
+      cukup banyak, tapi tidak akan dibahas detil disini, fokus ke <code>Title</code> function dan <code>Meta</code>
+      function saja.
+    </p>
+    <div class="mt-4">
+      <iframe src="https://pastebin.com/embed_iframe/cgE6Bfz4" style="border:none;width:100%;height: 6em;"></iframe>
+    </div>
+    <p>
+      Setelah import library panggil title dan meta service di <code>constructor</code> function. Beberapa service
+      butuh dimasukkan ke <code>providers</code>, tapi title dan meta service tidak perlu.
+    </p>
+    <div class="mt-4">
+      <iframe src="https://pastebin.com/embed_iframe/v11rKEfz" style="border:none;width:100%;height: 6em;"></iframe>
+    </div>
+    <p>
+      Memasukkan title dan metadata bisa dilakukan di bagian <code>ngOnInit</code> function. Setting <code>title</code>
+      bisa
+      menggunakan function <code>setTitle</code>, sedangkan menambah metadata bisa dilakukan dengan function
+      <code>addTag</code>
+      jika ingin menambah satu metadata, atau dengan function <code>addTags</code> jika ingin menambah banyak metadata
+      sekaligus.
+    </p>
+    <p>
+      <iframe src="https://pastebin.com/embed_iframe/QJrcDDiR" style="border:none;width:100%;height: 31em;"></iframe>
+    </p>
+    <p>
+      Dari snippet code di atas, beberapa string bisa diganti variable dari hasil response ke API server. 
+    </p>
+    <h5 class="bg-dark p-2 text-light">Kesimpulan</h5>
+    <ol>
+      <li>
+        Kunci utama dari import metadata dan title di angular ada pada 2 service <code>meta</code> dan <code>title</code>
+        yang bisa di import dari library <code>@angular/platform-browser</code>
+      </li>
+    </ol>
+    <p>
+      Artikel pertama ini tidak saya buat cukup sempurnah, artikel ini untuk membuat saya terus berkarya, mohon bantuan supportnya. terima kasih.
+    </p>
+  </div>
+</div>

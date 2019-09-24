@@ -1,0 +1,26 @@
+@import "../../blog.component.scss";
+
+.webTitle {
+  color: theme-color("main");
+  letter-spacing: 0.15em;
+  text-decoration-line: underline;
+}
+
+.webTitle, .linkBlog {
+  cursor: pointer;
+}
+
+.linkBlog div:hover {
+  color: theme-color("secondary");
+}
+
+.linkBlog div:nth-child(3) {
+  border: none;
+}
+
+.linkBlog div {
+  display: inline-flex;
+  padding: 0px 10px;
+  border-right: solid;
+  letter-spacing: 2px;
+}

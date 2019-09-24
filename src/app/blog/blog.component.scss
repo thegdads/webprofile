@@ -1,0 +1,20 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+$BlogGreen:    #026E00 !default;
+$BlogDark:    #333333 !default;
+$theme-colors: map-merge(
+  (
+    "main": $BlogGreen,
+    "background": $BlogDark
+  ),
+  $theme-colors
+);
+
+.bg-main {
+  background-color: theme-color("main");
+  color: theme-color('light');
+}
+
+.card {
+  box-shadow: theme-color("background") 3px 3px 25px;
+}

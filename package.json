@@ -1,6 +1,6 @@
 {
-  "name": "the-gdads",
-  "version": "0.1.0",
+  "name": "thegdads",
+  "version": "0.6.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --disable-host-check --host 0.0.0.0",
@@ -32,6 +32,8 @@
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
     "bootstrap": "^4.3.1",
     "express": "^4.15.2",
+    "moment": "^2.24.0",
+    "ngx-gist": "^1.0.4",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
