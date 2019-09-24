@@ -11,9 +11,9 @@ export class HomeComponent implements OnInit {
   constructor(private titleService: Title, private metaService: Meta) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Yuda Ferry Mahendra | bealkha.com');
+    this.titleService.setTitle('Yuda Ferry Mahendra | thegdads.com');
     this.metaService.addTags([
-      { name: 'title', content: 'Yuda Ferry Mahendra | bealkha.com' },
+      { name: 'title', content: 'Yuda Ferry Mahendra | thegdads.com' },
       { name: 'description', content: 'Yuda Ferry Mahendra, seorang web programmer sejak 2010. Saat ini mendalami nodejs, angular, ionic, dan mongodb.' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'robots', content: 'index, follow' },
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
       { name: 'date', content: '2019-09-02', scheme: 'YYYY-MM-DD' },
       { name: 'revisit-after', content: '7 days' },
       { httpEquiv: 'Content-Type', content: 'text/html' },
-      { property: 'og:title', content: 'Yuda Ferry Mahendra | bealkha.com' },
+      { property: 'og:title', content: 'Yuda Ferry Mahendra | thegdads.com' },
       { property: 'og:type', content: 'website' },
       { charset: 'UTF-8' }
     ], true);
