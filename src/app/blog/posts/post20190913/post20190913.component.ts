@@ -11,7 +11,7 @@ export class Post20190913Component implements OnInit {
   constructor(private titleService: Title, private metaService: Meta) { }
 
   ngOnInit() {
-    this.articleDate = '2019-09-16 13:09:02';
+    this.articleDate = '2019-09-24 13:09:02';
 
     this.titleService.setTitle('Menambahkan dinamic title dan meta tag di angular | Yuda | Blog');
     this.metaService.addTags([
