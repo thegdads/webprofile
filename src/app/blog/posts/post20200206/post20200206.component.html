@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+  <div class="col-12 col-md-9 col-lg-6">
+    <div class="row">
+      <div class="col">
+        <h3>Membuat Raspberry PI menjadi access point</h3>
+        <small>{{articleDate | date:'medium'}}</small>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col">
+        <img src="https://ik.imagekit.io/juncyboy/tr:ar-7-2,q-5/bealkha.com/raspberry-pi-access-point_uAsqcyR3Y.png" alt="raspberry pi access point"
+          class="w-100">
+      </div>
+    </div>
+    <p class="text-justify">
+      Access point rumah atau kantor rusak, beli access point butuh waktu. Jika memiliki Raspberry PI, kita bisa memanfaatkannya menjadi
+      customable access point. Dengan 5 langkah mudah kita bisa menjadikan Raspberry PI menjadi access point, tidak perlu skill khusus
+      hanya perlu pengetahuan dasar tentang linux. Jika memutuskan untuk membeli Raspberry PI seharusnya sudah memiliki skill dasar linux.
+    </p>
+    <h5 class="bg-dark p-2 text-light">Langkah 1: Install dependency</h5>
+    <p class="text-justify">
+    Install hostapd dan dnsmasq, <i>hostapd</i> digunakan untuk membuat wifi ethernet bisa broadcast SSID dan konfigurasi wifi access point
+    di letakkan di hostapd. Sedangkan <i>dnsmasq</i> digunakan untuk membuat DHCP IP untuk client yang akan connect ke access point.
+    </p>
+    <div class="mt-4">
+      <iframe src="https://pastebin.com/embed_iframe/DynyjT37" style="border:none;width:100%;height: 7em;"></iframe>
+    </div>
+    <h5 class="bg-dark p-2 text-light">Langkah 2: Menghalangi wifi untuk request DHCP IP</h5>
+    <p>
+    Buka file <i>dhcpcd.conf</i> dengan text editor yang anda suka, letak file <i>dhcpcd.conf</i> ada di folder <i>/etc/</i>.<br><br>
+    <code># vim /etc/dhcpcd.conf</code><br><br>
+    Tambahkan code dibawah ini di dalam file tersebut (letakkan di baris paling bawah).<br><br>
+    </p>
+    <div class="mt-4">
+      <iframe src="https://pastebin.com/embed_iframe/dR8VBgHL" style="border:none;width:100%;height: 4em;"></iframe>
+    </div>
+    <h5 class="bg-dark p-2 text-light">Langkah 3: Konfigurasi dnsmasq</h5>
+    <p>Hapus file konfigurasi asli <i>dnsmasq</i></p><br>
+    <code> # rm /etc/dnsmasq.conf</code><br><br>
+    <p>buat ulang file <i>dnsmasq.conf</i> dengan isi file-nya seperti di bawah ini.</p>
+    <div class="mt-4">
+      <iframe src="https://pastebin.com/embed_iframe/mDjwHEZH" style="border:none;width:100%;height: 7em;"></iframe>
+    </div>
+
+    <h5 class="bg-dark p-2 text-light">Langkah 4: Konfigurasi hostapd</h5>
+    <ul>
+      <li>Buat file <i>hostapd.conf</i> di folder <i>/etc/hostapd</i>, isi file tersebut dengan value di bawah ini
+        <div class="mt-4">
+          <iframe src="https://pastebin.com/embed_iframe/sBvRnUcY" style="border:none;width:100%;height: 22em;"></iframe>
+        </div>
+      </li>
+      <li>
+        Beritahu hostapd dimana letak konfigurasi file-nya.<br><br>
+        <code># vim /etc/default/hostapd</code><br><br>
+        Uncomment line ke 10 bagian <b>DAEMON_CONF</b>, dan isi value-nya dengan <i>hostapd.conf</i> path direction.
+        <div class="mt-4">
+          <iframe src="https://pastebin.com/embed_iframe/k3R1HsW6" style="border:none;width:100%;height: 4em;"></iframe>
+        </div>
+      </li>
+      <li>
+        Start hostapd service <br><br>
+        <code>
+          # sudo systemctl unmask hostapd<br>
+          # sudo systemctl enable hostapd<br>
+          # sudo systemctl start hostapd
+        </code>
+      </li>
+    </ul>
+    <h5 class="bg-dark p-2 text-light">Langkah 5: Meneruskan traffiq dari ethernet ke access point</h5>
+    <p>
+      <code># vim /etc/sysctl.conf</code><br><br>
+      Hilangkan comment (#) di line 28, pada bagian text <i>net.ipv4.ip_forward=1</i><br><br>
+      <code>
+        # sudo iptables -t nat -A POSTROUTING -o eth0  -j MASQUERADE<br>
+        # sudo sh -c “iptables-save > /etc/iptables.ipv4.nat”<br>
+	# vim /etc/rc.local
+      </code><br><br>
+
+      Tulis baris di bawah ini di line sebelum “<b>exit 0</b>”
+    </p>
+    <div class="mt-4">
+      <iframe src="https://pastebin.com/embed_iframe/9LLqnhRv" style="border:none;width:100%;height: 7em;"></iframe>
+    </div>
+    <h5 class="bg-dark p-2 text-light">Catatan</h5>
+    <ol>
+      <li>
+        Konfigurasi ini hanya konfigurasi satu arah, dari ethernet ke wireless network (wifi).
+      </li>
+      <li>
+        DHCP IP di dapat dari konfigurasi hostapd, sehingga bukan konfigurasi bridge.
+      </li>
+    </ol>
+  </div>
+</div>
