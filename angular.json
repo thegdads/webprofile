@@ -33,9 +33,15 @@
             "styles": [
               "src/styles.scss",
               "src/assets/fontawesome-free-5.10.2-web/css/all.css",
-              "./node_modules/bootstrap/scss/bootstrap.scss"
+              "./node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/prismjs/themes/prism-okaidia.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/marked/lib/marked.js",
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-css.min.js",
+              "node_modules/emoji-toolkit/lib/js/joypixels.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -150,6 +156,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "theGDads"
 }

@@ -25,6 +25,12 @@ export class ListComponent implements OnInit {
         created_date: '2020-02-06 13:24:26',
         link: '/blog/membuat-raspberry-pi-menjadi-access-point'
       },
+      {
+        image: 'https://ik.imagekit.io/juncyboy/tr:ar-4-3,w-250,q-20/bealkha.com/raspberry-pi-access-point_uAsqcyR3Y.png',
+        title: 'Backup dan Restore <br /> Mongodb Realm setting',
+        created_date: '2020-08-15 05:00:00',
+        link: '/blog/backup-restore-mongodb-realm-setting'
+      },
     ]
   }
 }
