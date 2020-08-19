@@ -12,7 +12,7 @@ export class Post20200813Component implements OnInit {
 
 
   ngOnInit(): void {
-    this.articleDate = '2020-08-15 05:00:00';
+    this.articleDate = '2020-08-19 14:28:13';
     this.titleService.setTitle('Backup dan Restore Mongodb Application Setting | Yuda | Blog');
     this.metaService.addTags([
       { name: 'title', content: 'Backup dan Restore Mongodb Application Setting | Yuda | Blog' },
