@@ -71,9 +71,6 @@ realm-cli export \
 
 ## Import mongodb realm app backup
 
-> Import hanya bisa dilakukan ke destination yang sama saat export,
-> tidak bisa import ke destination yang berbeda
-
 > Import membutuhkan credential, jika sudah logout atau belum login,
 > harus login dulu sebelum execute command import
 
@@ -88,6 +85,14 @@ realm-cli import \
 
 > [Import strategy] name ada 3 (saat blog ini ditulis) :
 > **merge**, **replace**, dan **replace by name**
+
+- Jika ingin import ke destination berbeda,
+  bisa update file `config.json`, line **app_default_domain**.
+  Value-nya ganti dengan value dari app_default_domain destination.
+
+> cara dapatkan **app_default_domain** destination, bisa dengan
+> cara export dahulu destination app-nya,
+> dan lihat file config.json.
 
 ---
 
