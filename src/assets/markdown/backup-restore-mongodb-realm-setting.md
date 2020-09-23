@@ -111,6 +111,7 @@ realm-cli import \
 
   20200819 - Berhubungan dengan parameter "--include-hosting" saat export config,
   Jika paramter tersebut tidak ada, maka hosting tidak ikut ter-backup, tapi diff / import tidak ada kendala
+  20200923 - Ternyata filed `id` adalah variable reserved, jadi tidak boleh ada key field `id` di schema.
 
 [realm cli]: https://docs.mongodb.com/realm/deploy/realm-cli-reference/
 [access manager]: https://ik.imagekit.io/juncyboy/backup_restore_mongodb_realm_1_VzXjumvWYID.jpg
