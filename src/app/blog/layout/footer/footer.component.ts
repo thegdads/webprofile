@@ -12,7 +12,7 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.email = 'thegdads@gmail.com';
+    this.email = 'yuda@thegdads.com';
     this.phone = '+6285655448804';
   }
 }
